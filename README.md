@@ -7,6 +7,7 @@
 limit = TimeLimit(1000)  # 1 秒
 # 然后，使用 with 语句来限制任务的执行时间
 with limit:
+    time.sleep(1500) # 模拟长时间操作
     try:
         # 在任务中插入一些检查点
         limit.checkpoint()
@@ -14,5 +15,4 @@ with limit:
         print("任务超时！")
         # 在这里处理超时后的逻辑
     # 在这里编写需要限制时间的代码
-    time.sleep(1.5) # 模拟耗时操作
 ```
